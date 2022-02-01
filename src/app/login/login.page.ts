@@ -13,12 +13,13 @@ export class LoginPage implements OnInit {
   loginForm: FormGroup;
   validation_messages = {
     email: [
-      { type: "required", message: "El email es obligatorio!" },
-      { type: "pattern", message: "Email invalido, rectifiquelo" }
+      { type: "required", message: "El email es obligatorio" },
+      { type: "pattern", message: "Email invalido o no existe" }
     ],
     password: [
-      { type: "required", message: "Por Favor ingrese una Contraseña"},
-      { type: "minlength", message: "Su contraseña debe ser al menos 6 caracteres" }
+      { type: "required", message: "ingrese una Contraseña"},
+      { type: "minlength", message: "debe tener al menos 6 caracteres" },
+      { type: "maxlength", message: "debe tener maximo 9 caracteres" }
     ]
 
   };
@@ -39,7 +40,8 @@ export class LoginPage implements OnInit {
       "",
       Validators.compose([
         Validators.required,
-        Validators.minLength(6)
+        Validators.minLength(6),
+        Validators.maxLength(9)
       ])
     )
     
@@ -53,7 +55,7 @@ export class LoginPage implements OnInit {
   }
 
   loginUser(credentials){
-    //console.log(credentials);
+  
     this.authService.loginUser(credentials).then(
       res => {
         this.errorMessage = "";
@@ -69,11 +71,5 @@ export class LoginPage implements OnInit {
     this.navCtrl.navigateForward("/register");
   }
 
-  test(){
-    const password = "123456789"
-    const password_base64 = btoa(password)
-    const password_dec = atob(password_base64)
-    console.log("password encr: " + password_base64 +" password dec: " + password_dec)
-  }
-
+  
 }

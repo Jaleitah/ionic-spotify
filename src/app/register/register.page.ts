@@ -14,18 +14,21 @@ export class RegisterPage implements OnInit {
   errorMessage: string = "";
   validation_messages = {
     email: [
-      { type: "required", message: "El email es obligatorio!" },
-      { type: "pattern", message: "Email invalido, rectifiquelo" }
+      { type: "required", message: "El email es obligatorio" },
+      { type: "pattern", message: "Email invalido" }
     ],
     password: [
-      { type: "required", message: "Por Favor ingrese una Contraseña"},
-      { type: "minlength", message: "Su contraseña debe ser al menos 6 caracteres" }
+      { type: "required", message: "ingrese una Contraseña"},
+      { type: "minlength", message: "debe tener minimo 6 caracteres" },
+      { type: "maxlength", message: "debe tener maximo 9 caracteres" }
     ],
     nombre: [
-      { type: "required", message: "El email es obligatorio!" }
+      { type: "required", message: "El email es obligatorio" },
+      { type: "maxlength", message: "debe tener maximo 25 caracteres" }
     ],
     apellido: [
-      { type: "required", message: "El email es obligatorio!" }
+      { type: "required", message: "El email es obligatorio!" },
+      { type: "maxlength", message: "debe tenermaximo 25 caracteres" }
     ]
   }
   constructor(private formBuilder: FormBuilder, private navCtrl: NavController, private storage: Storage,private authService: AuthenticateService) {
@@ -42,19 +45,22 @@ export class RegisterPage implements OnInit {
         "",
         Validators.compose([
           Validators.required,
-          Validators.minLength(6)
+          Validators.minLength(6),
+          Validators.maxLength(9)
         ])
       ),
       nombre: new FormControl(
         "",
         Validators.compose([
-          Validators.required
+          Validators.required,
+          Validators.maxLength(25)
         ])
       ),
       apellido: new FormControl(
         "",
         Validators.compose([
-          Validators.required
+          Validators.required,
+          Validators.maxLength(25)
         ])
       )
     });

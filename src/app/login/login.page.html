@@ -5,6 +5,9 @@
 </ion-header>
 
 <ion-content>
+  <figure class="ion-text-center">
+    <img src="assets/images/anime.jpg"/>
+  </figure>
 
     <img class="ion-hide" src="assets/images/musica.jpeg"/> 
 
@@ -53,9 +56,9 @@
       <div class="alert" *ngIf="errorMessage != '' ">
         <strong>Error: </strong> {{errorMessage}}
       </div>
-      <ion-button expand="full" shape="round" color="success" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
+      <ion-button expand="full" fill="outline" color="medium" shape="round" color="success" type="submit" [disabled]="!loginForm.valid">Login</ion-button>
     </form> 
-   </ion-content>
+</ion-content>
 <ion-footer>
-<ion-button expand="full" (click)="goToRegister()">Registrate!</ion-button> 
+  <ion-button expand="full" fill="outline" (click)="goToRegister()">Registrate!</ion-button>
 </ion-footer>

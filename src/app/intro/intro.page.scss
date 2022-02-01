@@ -6,8 +6,7 @@ ion-content {
     
   }
 
- 
-  
+   
   ion-slides {
     height: 100%;
     max-width: 800px;
@@ -38,13 +37,10 @@ ion-content {
   
   
   ion-slide > img {
-    max-height: 60%;
-    max-width: 60%;
-    margin: 50px 0;
-    top: 0px;
-    bottom: 0px;
-    right: 0px;
-    left: 0px;
+    max-height: 80%;
+    max-width: 80%;
+    margin: 40px ;
+   
   }
   
   ion-slide > ion-icon[name="close"] {

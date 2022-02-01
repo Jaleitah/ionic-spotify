@@ -44,9 +44,7 @@ export class HomePage implements OnInit{
       this.songs = listOfTracks.tracks;
     });
     
-    /* this.musicService.getCompanies().then(companies => {
-      console.log(companies)
-    }); */
+  
 
    
   }

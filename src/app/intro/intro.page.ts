@@ -37,7 +37,14 @@ export class IntroPage implements OnInit {
       description: "Solo por $1.99 al mes podras llevar toda tu musica sin necesidad de datos",
       image: "assets/images/soundtrap.jpg",
       alt: "imagen de promo"
-    }
+    },
+    {
+      id:3,
+    title:"empecemos de una vez!!!",
+    description: "cierra la pestaña para logearte",
+    image: "assets/images/2142842.jpg",
+    alt: "imagen para cerrar"
+  }
     
   ]
   constructor(private router: Router, private storage: Storage) { 
